@@ -20,9 +20,10 @@ end
 
 def printer(attendees)
   print_array = []
-  attendees.each{|name|
-  print_array << batch_badge_creator(name)
-  
+  attendee_list = batch_badge_creator(attendees)
+  room_list = assign_rooms(attendees)
+  room_list.each_with_index{|name, index|
+    print_array << attendee_list[index] + room_list[name]
   }
-  p print_array
+  puts print_array
 end
