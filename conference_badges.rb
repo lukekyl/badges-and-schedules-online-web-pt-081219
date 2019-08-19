@@ -19,11 +19,10 @@ def assign_rooms(array)
 end
 
 def printer(attendees)
-  print_array = []
   attendee_list = batch_badge_creator(attendees)
   room_list = assign_rooms(attendees)
   room_list.each_with_index{|name, index|
-    print_array << "#{attendee_list[index]},  #{room_list[index]}"
+    puts attendee_list[index]
+    puts room_list[index]
   }
-  puts print_array
 end
